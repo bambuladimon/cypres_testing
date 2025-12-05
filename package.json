@@ -1,0 +1,22 @@
+{
+  "name": "cypres_project",
+  "version": "1.0.0",
+  "description": "My cypres Hillel shcole.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bambuladimon/cypres_testing.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bambuladimon/cypres_testing/issues"
+  },
+  "homepage": "https://github.com/bambuladimon/cypres_testing#readme",
+  "devDependencies": {
+    "cypress": "^15.7.1"
+  }
+}
