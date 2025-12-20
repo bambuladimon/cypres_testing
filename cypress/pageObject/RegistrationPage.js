@@ -7,45 +7,45 @@ export class RegistrationPage {
 
   visit() {
     cy.get('.hero-descriptor_btn').click();
+    return this
   }
 
   submit() {
     this.el.registerButton().click();
+    return this
   }
 
   fillName(value) {
     this.el.nameInput().clear().type(value);
+    return this
   }
 
   fillLastName(value) {
     this.el.lastNameInput().clear().type(value);
+    return this
   }
 
   fillEmail(value) {
     this.el.emailInput().clear().type(value);
+    return this
   }
 
   fillPassword(value) {
     this.el.passwordInput().clear().type(value);
+    return this
   }
 
   fillRePassword(value) {
     this.el.rePasswordInput().clear().type(value);
+    return this
+  }
+
+  userEmailAlert(text) {
+    this.el.userEmailAlert().should('have.text', text);;
+    return this
   }
 
   registerButton() {
     return this.el.registerButton()
-  }
-
-  errorShouldBeVisible(text) {
-    this.el.errorMessage(text).should('be.visible');
-  }
-
-  inputShouldHaveRedBorder(inputElementFn) {
-    inputElementFn().should(
-      'have.css',
-      'border-color',
-      'rgb(220, 53, 69)'
-    );
   }
 }

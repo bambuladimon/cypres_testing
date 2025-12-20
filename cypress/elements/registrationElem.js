@@ -27,7 +27,7 @@ export class RegistrationElements {
     return cy.contains('button.btn.btn-primary', 'Register');
   }
 
-  errorMessage(text) {
-    return cy.contains('.error-message', text);
+  userEmailAlert() {
+    return cy.get('.alert.alert-danger');
   }
 }
