@@ -1,9 +1,9 @@
 export class BasePage {
-  constructor(url, params) {
+  constructor(url) {
     this.url = url;
   }
   
-    navigate(options = {}) {
-        cy.visit(this.url, options);
-    }
+  navigate(options = {}) {
+      cy.visit(this.url, options);
+  }
 }

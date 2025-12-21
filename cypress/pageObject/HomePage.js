@@ -1,6 +1,6 @@
 import { BasePage } from "./base/BasePage";
 
-const url = "https://qauto.forstudy.space/"
+const url = "/"
 
 export class HomePage extends BasePage {
     constructor() {

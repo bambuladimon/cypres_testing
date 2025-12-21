@@ -4,7 +4,9 @@
   "description": "My cypres Hillel shcole.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cy:local": "cypress run --config-file cypress.config.local.js --spec cypress/e2e/lessons21.cy.js",
+    "cy:local2": "cypress run --config-file cypress.config.local2.js --spec cypress/e2e/lessons21.cy.js"
   },
   "repository": {
     "type": "git",
@@ -18,5 +20,8 @@
   "homepage": "https://github.com/bambuladimon/cypres_testing#readme",
   "devDependencies": {
     "cypress": "^15.7.1"
+  },
+  "dependencies": {
+    "mochawesome": "^7.1.4"
   }
 }
