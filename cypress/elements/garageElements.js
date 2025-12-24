@@ -1,7 +1,7 @@
 export class GarageElements {
     
     addCarBtn() {
-        return cy.contains('button.btn.btn-primary', 'Add car');
+        return cy.contains('button.btn.btn-primary', 'Add car')
     }
   
     brandSelector() {
@@ -9,18 +9,42 @@ export class GarageElements {
     }
 
     modelSelector() {
-        return cy.get('select#addCarModel');
+        return cy.get('select#addCarModel')
     }
 
     milegelInput() {
-        return cy.get('#addCarMileage');
+        return cy.get('#addCarMileage')
     }
 
     submitCar() {
-        return cy.get('button.btn.btn-primary', 'Add')
+        return cy.contains('.modal-footer button.btn.btn-primary', 'Add')
     }
 
-    cancelCar() {
-        return cy.get('button.btn.btn-secondary', 'Cancel')
+    carList() {
+        return cy.get('.car-list')
+    }
+
+    carIthem() {
+        return cy.get('.car_name')
+    }
+
+    addExpenseBtn() {
+        return cy.get('.car_actions .car_add-expense')
+    }
+
+    addExpenseMilage() {
+        return cy.get('#addExpenseMileage')
+    }
+
+    addExpenseLiters() {
+        return cy.get('#addExpenseLiters')
+    }
+
+    addExpenseTotalCost() {
+        return cy.get('#addExpenseTotalCost')
+    }
+
+    submitExpense() {
+        return cy.contains('.modal-footer button.btn.btn-primary', 'Add')
     }
 }
