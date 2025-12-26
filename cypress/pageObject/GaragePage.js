@@ -73,4 +73,9 @@ export class GaragePage extends BasePage {
         this.el.addExpenseTotalCost().clear().type(cost)
         return this
     }
+
+    openExpensePage() {
+        this.el.expenseLink().click()
+        return this
+    }
 }
