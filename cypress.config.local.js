@@ -8,4 +8,11 @@ module.exports = defineConfig({
       USER_PASSWORD: 'QWE123qwe'
     }
   },
+  reporter: 'mochawesome',
+  reporterOptions: {
+    reportDir: 'cypress/results',
+    overwrite: false,
+    html: false,
+    json: true,
+  },
 });

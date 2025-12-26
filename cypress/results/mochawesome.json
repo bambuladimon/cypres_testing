@@ -1,0 +1,124 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-12-21T14:06:11.455Z",
+    "end": "2025-12-21T14:06:14.957Z",
+    "duration": 3502,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "fcbead84-0e4e-4dc4-b383-55821518f3e4",
+      "title": "",
+      "fullFile": "cypress\\e2e\\lessons21.cy.js",
+      "file": "cypress\\e2e\\lessons21.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "fbca47f4-d975-4cf6-b419-89e697e21212",
+          "title": "Testing qauto site for sdudy",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Check that page is open",
+              "fullTitle": "Testing qauto site for sdudy Check that page is open",
+              "timedOut": null,
+              "duration": 1709,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "garagePage.logIn();\ncy.url('contain', '/garage');",
+              "err": {},
+              "uuid": "459b0101-6b0e-463a-b561-8cb5f17b9528",
+              "parentUUID": "fbca47f4-d975-4cf6-b419-89e697e21212",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Add car",
+              "fullTitle": "Testing qauto site for sdudy Add car",
+              "timedOut": null,
+              "duration": 1732,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "garagePage.logIn().openAddPopup();",
+              "err": {},
+              "uuid": "b411e74d-2c2a-4eea-8d6d-cda860325165",
+              "parentUUID": "fbca47f4-d975-4cf6-b419-89e697e21212",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "459b0101-6b0e-463a-b561-8cb5f17b9528",
+            "b411e74d-2c2a-4eea-8d6d-cda860325165"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 3441,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}
