@@ -47,4 +47,8 @@ export class GarageElements {
     submitExpense() {
         return cy.contains('.modal-footer button.btn.btn-primary', 'Add')
     }
+
+    expenseLink() {
+        return cy.get('[routerlink="expenses"]')
+    }
 }

@@ -21,11 +21,28 @@ describe('Testing qauto site for sdudy', () => {
   })
 
   it('Add car', ()=> {
+    let carId;
+    cy.intercept('POST', '/api/cars').as('addCar')
+
     garagePage.openAddPopup()
     .selectBrand('Audi')
     .selectModel('TT')
-    .insertMileage(250)
+    .insertMileage(10)
     .addCar()
+
+    cy.wait('@addCar').then(({ request, response }) => {
+      // лог у консоль
+      console.log('REQUEST:', request.body)
+      console.log('RESPONSE:', response.body)
+      // витягуємо айдішку автомобіля
+      carId = response.body.data.id;
+      console.log('carId: ', carId)
+
+      expect(response.statusCode).to.eq(201)
+      expect(response.body.data.brand).to.eq('Audi')
+      expect(response.body.data.model).to.eq('TT')
+    })
+
     garageEl.carIthem().eq(0).should('have.text', 'Audi TT');
   })
 
@@ -37,4 +54,6 @@ describe('Testing qauto site for sdudy', () => {
     .addCar()
     cy.url('contain', 'expenses?carId=')
   })
+
+  
 })

@@ -16,6 +16,24 @@
     cy.get('#signinPassword').type(password, { sensitive: true })
     cy.contains('button.btn.btn-primary', 'Login').click();
  })
+
+Cypress.Commands.add('addExpenseByCarId', (token, id) => {
+  return cy.request({
+    method: 'POST',
+    url: `/api//expenses`,
+    headers: {
+      cookie: token,
+    },
+    body: {
+      "carId": id,
+      "reportedAt": "2025-12-26",
+      "mileage": 999,
+      "liters": 11,
+      "totalCost": 11,
+      "forceMileage": false
+    }
+  })
+})
 //
 //
 // -- This is a child command --

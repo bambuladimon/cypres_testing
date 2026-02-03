@@ -1,0 +1,35 @@
+name: Cypress Tests
+
+on: workflow_dispatch
+
+jobs:
+  cypress-run:
+    runs-on: ubuntu-latest
+    services:
+      chrome:
+        image: selenium/standalone-chrome:latest
+        ports:
+          - 4444:4444
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build Docker image
+        run: docker build -t cypress-tests .
+
+      - name: Run Cypress tests in Docker
+        run: |
+          docker run --network host \
+            -e CYPRESS_baseUrl=https://qauto.forstudy.space/ \
+            -e CYPRESS_USER_EMAIL=${{ secrets.USER_EMAIL }} \
+            -e CYPRESS_USER_PASSWORD=${{ secrets.USER_PASSWORD }} \
+            cypress-tests
+
+      - name: Upload Mochawesome report
+        uses: actions/upload-artifact@v4
+        with:
+          name: mochawesome-report
+          path: cypress/results/mochawesome.json
